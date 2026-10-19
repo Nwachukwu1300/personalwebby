@@ -1,0 +1,822 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Mmesoma (Soma) Nwachukwu, AI engineer who brings agentic AI into businesses. Experience, case studies, awards and contact.">
+<meta property="og:title" content="Mmesoma Nwachukwu">
+<meta property="og:description" content="AI engineer who brings agentic AI into businesses.">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Mmesoma Nwachukwu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one 1120px column. Hero splits into identity and a metrics panel, then an
+   experience timeline, flagship case studies with real numbers, a work grid, awards, skills. */
+:root {
+  --bg: #F3F4F8;
+  --surface: #FFFFFF;
+  --ink: #141829;
+  --muted: #5A6075;
+  --line: #DADDE7;
+  --accent: #2F49E0;
+  --accent-soft: #E3E7FC;
+  --signal: #C77A12;
+  --code-bg: #141829;
+  --code-ink: #DCE1F5;
+  --code-key: #93A6FF;
+  --code-str: #F0BE6E;
+  --font-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0D1020; --surface: #161A2E; --ink: #E8EAF4; --muted: #9AA0B8; --line: #2A2F48;
+    --accent: #8DA0FF; --accent-soft: #1F2650; --signal: #F0B04F;
+    --code-bg: #090B16; --code-ink: #D4D9EE; --code-key: #93A6FF; --code-str: #F0BE6E;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0D1020; --surface: #161A2E; --ink: #E8EAF4; --muted: #9AA0B8; --line: #2A2F48;
+  --accent: #8DA0FF; --accent-soft: #1F2650; --signal: #F0B04F;
+  --code-bg: #090B16; --code-ink: #D4D9EE; --code-key: #93A6FF; --code-str: #F0BE6E;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 16px; line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 1120px; margin: 0 auto; padding-block: 48px 72px; display: grid; gap: 96px; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; }
+p { margin: 0; }
+.mono { font-family: var(--font-mono); }
+.num { font-variant-numeric: tabular-nums; }
+
+/* Eyebrow + section headings */
+.eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.sec-head { display: grid; gap: 10px; margin-bottom: 36px; max-width: 68ch; }
+.sec-head h2 { font-size: clamp(30px, 4.2vw, 44px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.05; }
+.sec-head p { color: var(--muted); }
+
+/* Hero */
+.hero { display: grid; grid-template-columns: 1.15fr 1fr; gap: 48px; align-items: start; }
+.hero-id { display: grid; gap: 22px; min-width: 0; }
+.mark {
+  width: 64px; height: 64px; border-radius: 16px; background: var(--accent); color: var(--bg);
+  display: grid; place-items: center; font-family: var(--font-display); font-weight: 800; font-size: 26px; letter-spacing: -0.02em;
+}
+.hero h1 { font-size: clamp(46px, 7.4vw, 92px); font-weight: 800; letter-spacing: -0.035em; line-height: .92; }
+.hero h1 span { display: block; color: var(--accent); }
+.role { font-family: var(--font-mono); font-size: 14px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.role b { color: var(--ink); font-weight: 500; }
+.aka { font-family: var(--font-display); font-size: 22px; color: var(--muted); margin-top: -6px; }
+.aka b { color: var(--ink); font-weight: 600; }
+.thesis b { font-weight: 600; color: var(--accent); }
+.thesis { font-size: 19px; line-height: 1.55; max-width: 56ch; }
+.links { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; padding: 9px 15px; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+  font: 500 14px/1 var(--font-body); text-decoration: none; cursor: pointer;
+}
+.btn:hover { border-color: var(--accent); color: var(--accent); }
+.btn.primary { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.btn.primary:hover { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; min-width: 0; }
+.panel-top { display: flex; justify-content: space-between; gap: 12px; padding: 12px 18px; border-bottom: 1px solid var(--line); font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+.panel-top .live { color: var(--accent); }
+.metrics { display: grid; grid-template-columns: 1fr 1fr; }
+.metric { padding: 20px 18px; display: grid; gap: 6px; align-content: start; border-bottom: 1px solid var(--line); }
+.metric:nth-child(odd) { border-right: 1px solid var(--line); }
+.metric:nth-last-child(-n+2) { border-bottom: 0; }
+.metric .v { font-family: var(--font-display); font-weight: 800; font-size: 36px; letter-spacing: -0.03em; line-height: 1; font-variant-numeric: tabular-nums; }
+.metric .v small { font-size: 18px; font-weight: 600; color: var(--muted); margin-left: 2px; }
+.metric .l { font-size: 13.5px; color: var(--muted); line-height: 1.4; }
+.metric .s { font-family: var(--font-mono); font-size: 11px; color: var(--signal); letter-spacing: .04em; }
+
+/* Approach steps */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.steps li { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 24px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.step-n { font-family: var(--font-display); font-weight: 800; font-size: 34px; line-height: 1; color: var(--accent); }
+.steps h3 { font-size: 20px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; }
+.steps p { font-size: 15px; color: var(--muted); }
+@media (max-width: 920px) { .steps { grid-template-columns: 1fr; } }
+
+/* Experience timeline */
+.timeline { display: grid; gap: 0; border-left: 2px solid var(--line); margin-left: 6px; }
+.job { position: relative; padding: 0 0 44px 32px; display: grid; grid-template-columns: 190px 1fr; gap: 8px 32px; }
+.job:last-child { padding-bottom: 0; }
+.job::before {
+  content: ""; position: absolute; left: -8px; top: 6px; width: 14px; height: 14px; border-radius: 50%;
+  background: var(--bg); border: 2px solid var(--muted);
+}
+.job.now::before { background: var(--accent); border-color: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
+.when { font-family: var(--font-mono); font-size: 13px; color: var(--muted); padding-top: 2px; }
+.when .tag-now { display: inline-block; margin-top: 6px; font-size: 11px; color: var(--accent); background: var(--accent-soft); padding: 2px 8px; border-radius: 999px; }
+.job-body { display: grid; gap: 10px; min-width: 0; }
+.job h3 { font-size: 22px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; }
+.job h3 .org { color: var(--accent); }
+.job ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; max-width: 72ch; }
+.job li::marker { color: var(--muted); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font-family: var(--font-mono); font-size: 11.5px; padding: 3px 9px; border-radius: 6px; background: var(--accent-soft); color: var(--ink); }
+.award-note { font-size: 13.5px; color: var(--signal); font-family: var(--font-mono); }
+
+/* Case studies */
+.cases { display: grid; gap: 28px; }
+.case { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.case-text { display: grid; gap: 14px; align-content: start; min-width: 0; }
+.case-label { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: baseline; }
+.case h3 { font-size: clamp(26px, 3vw, 34px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.05; }
+.case p { max-width: 62ch; }
+.case .why { color: var(--muted); }
+.case-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.case-data { display: grid; gap: 16px; align-content: start; min-width: 0; }
+
+.stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.stat-row > div { background: var(--surface); padding: 14px; display: grid; gap: 4px; }
+.stat-row .v { font-family: var(--font-display); font-weight: 800; font-size: 26px; letter-spacing: -0.02em; line-height: 1; font-variant-numeric: tabular-nums; }
+.stat-row .l { font-size: 12.5px; color: var(--muted); line-height: 1.35; }
+
+.bars { display: grid; gap: 10px; }
+.bar { display: grid; grid-template-columns: 112px 1fr 52px; gap: 12px; align-items: center; font-size: 13.5px; }
+.bar .track { height: 10px; background: var(--accent-soft); border-radius: 999px; overflow: hidden; }
+.bar .fill { height: 100%; background: var(--accent); border-radius: 999px; }
+.bar.key .fill { background: var(--signal); }
+.bar .pct { font-family: var(--font-mono); text-align: right; font-variant-numeric: tabular-nums; }
+.axis { display: grid; grid-template-columns: 112px 1fr 52px; gap: 12px; font-family: var(--font-mono); font-size: 10.5px; color: var(--muted); }
+.axis span:nth-child(2) { display: flex; justify-content: space-between; }
+
+.code { background: var(--code-bg); color: var(--code-ink); border-radius: 12px; padding: 16px 18px; font: 12.5px/1.6 var(--font-mono); overflow-x: auto; margin: 0; }
+.code .k { color: var(--code-key); }
+.code .s { color: var(--code-str); }
+.code .c { color: #7D86A8; }
+
+.ab { width: 100%; border-collapse: collapse; font-size: 14px; }
+.ab-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; }
+.ab th, .ab td { padding: 10px 14px; text-align: right; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.ab th:first-child, .ab td:first-child { text-align: left; }
+.ab thead th { font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+.ab tbody tr:last-child td { border-bottom: 0; }
+.ab .gain { color: var(--accent); font-weight: 600; }
+
+.stages { display: grid; gap: 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.stage { display: grid; grid-template-columns: 34px 1fr; gap: 12px; padding: 10px 14px; border-bottom: 1px solid var(--line); font-size: 14px; }
+.stage:last-child { border-bottom: 0; }
+.stage .n { font-family: var(--font-mono); color: var(--accent); font-size: 12px; padding-top: 2px; }
+.stage b { font-weight: 600; }
+.stage span.d { color: var(--muted); }
+
+/* Work grid */
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.card { border-top: 2px solid var(--ink); padding-top: 16px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.card h3 { font-size: 20px; font-weight: 600; letter-spacing: -0.01em; }
+.card .ctx { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+.card p { font-size: 15px; color: var(--ink); }
+.card .more { font-size: 14px; display: flex; gap: 14px; flex-wrap: wrap; }
+
+/* Competitions */
+.comp { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.comp-item { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 22px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.placing { font-family: var(--font-display); font-size: 30px; font-weight: 800; letter-spacing: -0.02em; line-height: 1; color: var(--accent); }
+.placing small { display: block; font-family: var(--font-mono); font-size: 12px; font-weight: 400; letter-spacing: 0; color: var(--muted); margin-top: 6px; }
+.comp-item h3 { font-size: 19px; font-weight: 600; }
+.comp-item p { font-size: 15px; }
+
+/* Awards */
+.awards { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }
+.award { background: var(--surface); padding: 22px 18px; display: grid; gap: 10px; align-content: start; }
+.award .odds { font-family: var(--font-display); font-weight: 800; font-size: 28px; letter-spacing: -0.02em; line-height: 1; font-variant-numeric: tabular-nums; }
+.award .odds small { display: block; font-family: var(--font-mono); font-size: 11px; font-weight: 400; color: var(--muted); letter-spacing: .02em; margin-top: 6px; }
+.award h3 { font-size: 16px; font-weight: 600; line-height: 1.25; font-family: var(--font-body); }
+.award .by { font-size: 13px; color: var(--muted); }
+.dots { display: grid; grid-template-columns: repeat(10, 1fr); gap: 3px; max-width: 120px; margin-top: 4px; }
+.dots i { aspect-ratio: 1; border-radius: 50%; background: var(--line); }
+.dots i.on { background: var(--signal); }
+
+/* Education and skills */
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.edu { display: grid; gap: 22px; }
+.edu-item { display: grid; gap: 6px; }
+.edu-item h3 { font-size: 22px; font-weight: 600; }
+.edu-item .ctx { font-family: var(--font-mono); font-size: 13px; color: var(--muted); }
+.grade { display: inline-block; font-family: var(--font-mono); font-size: 12px; color: var(--accent); background: var(--accent-soft); padding: 3px 10px; border-radius: 999px; width: fit-content; }
+.skills { display: grid; gap: 18px; }
+.skill-group { display: grid; grid-template-columns: 120px 1fr; gap: 14px; align-items: baseline; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+.skill-group:last-child { border-bottom: 0; padding-bottom: 0; }
+.skill-group .g { font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.skill-group .list { font-size: 15px; line-height: 1.7; min-width: 0; }
+
+/* Contact */
+.contact { background: var(--ink); color: var(--bg); border-radius: 24px; padding: 48px 40px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 32px; align-items: end; }
+.contact h2 { font-size: clamp(32px, 5vw, 56px); font-weight: 800; letter-spacing: -0.03em; line-height: 1; }
+.contact p { color: var(--bg); opacity: .78; margin-top: 14px; max-width: 46ch; }
+.contact-actions { display: grid; gap: 12px; justify-items: start; min-width: 0; }
+.email { font-family: var(--font-mono); font-size: 16px; background: transparent; border: 1px solid currentColor; color: var(--bg); padding: 12px 16px; border-radius: 12px; display: flex; gap: 14px; align-items: center; flex-wrap: wrap; max-width: 100%; word-break: break-all; }
+.email button { font: 500 13px/1 var(--font-body); background: var(--bg); color: var(--ink); border: 0; padding: 8px 12px; border-radius: 8px; cursor: pointer; }
+.contact .links .btn { background: transparent; color: var(--bg); border-color: color-mix(in srgb, var(--bg) 40%, transparent); }
+.contact .links .btn:hover { border-color: var(--bg); }
+.foot { font-family: var(--font-mono); font-size: 12px; color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-top: -60px; }
+
+/* Responsive */
+@media (max-width: 920px) {
+  .hero, .case, .two, .contact { grid-template-columns: 1fr; }
+  .grid3 { grid-template-columns: 1fr 1fr; }
+  .awards { grid-template-columns: 1fr 1fr; }
+  .job { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .wrap { gap: 72px; padding-block: 28px 48px; }
+  .grid3, .comp { grid-template-columns: 1fr; }
+  .awards { grid-template-columns: 1fr; }
+  .case { padding: 22px; }
+  .contact { padding: 32px 22px; }
+  .metric .v { font-size: 30px; }
+  .stat-row { grid-template-columns: 1fr 1fr; }
+  .bar, .axis { grid-template-columns: 88px 1fr 46px; }
+  .skill-group { grid-template-columns: 1fr; gap: 4px; }
+  .job { padding-left: 24px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .bar .fill { animation: grow 900ms cubic-bezier(.2,.7,.2,1) both; transform-origin: left; }
+  @keyframes grow { from { transform: scaleX(.15); } to { transform: scaleX(1); } }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-id">
+      <div class="mark" aria-hidden="true">MN</div>
+      <h1>Mmesoma <span>Nwachukwu</span></h1>
+      <p class="aka">Or you can call me <b>Soma</b></p>
+      <div class="role"><b>AI Engineer</b><span>Agentic AI for business</span><span>First Class BSc Computer Science</span><span>Coventry, UK</span></div>
+      <p class="thesis"><b>I bring AI into businesses.</b> I find the slow, manual work holding a team back, then design and integrate agentic AI that does it for them. At Projekt Rising that cut about 600 hours of manual work a month across SME clients. At Ventureship I replaced a founder's entire hiring process with a multistage agent pipeline. Underneath sits real ML depth, from computer vision for national roads to a transformer written from raw CUDA kernels.</p>
+      <div class="links">
+        <a class="btn primary" href="https://mmesomadev.com/Mmesoma_CV_pdf.pdf" target="_blank" rel="noopener">Download CV</a>
+        <a class="btn" href="https://github.com/Nwachukwu1300" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/mmesoma-nwachukwu-3a3862263/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://huggingface.co/mmesomaa/sentiel1" target="_blank" rel="noopener">Hugging Face</a>
+        <a class="btn" href="https://mmesomadev.com" target="_blank" rel="noopener">mmesomadev.com</a>
+      </div>
+    </div>
+
+    <section class="panel" aria-label="Headline results">
+      <div class="panel-top"><span>business impact and research results</span><span class="live">9 roles · 36 repos</span></div>
+      <div class="metrics">
+        <div class="metric"><span class="v num">~600<small>hrs</small></span><span class="l">of manual work automated every month across SME clients</span><span class="s">PROJEKT RISING</span></div>
+        <div class="metric"><span class="v num">25.7<small>×</small></span><span class="l">faster attention from a tiled CUDA kernel I wrote from scratch</span><span class="s">CUDA TRANSFORMER</span></div>
+        <div class="metric"><span class="v num">98<small>%</small></span><span class="l">weather classification accuracy on 10,000 motorway CCTV images</span><span class="s">NATIONAL HIGHWAYS</span></div>
+        <div class="metric"><span class="v num">46<small>ms</small></span><span class="l">to identify a car's make, model and year from one photo</span><span class="s">DISSERTATION</span></div>
+        <div class="metric"><span class="v num">2 of 3</span><span class="l">AI prototypes greenlit by leadership after my demos</span><span class="s">SALESAPE.AI</span></div>
+        <div class="metric"><span class="v num">1 of 10</span><span class="l">award winners chosen from 400 early talent people. I won Year in Industry Student of the Year</span><span class="s">NATIONAL HIGHWAYS 2025</span></div>
+      </div>
+    </section>
+  </header>
+
+  <!-- APPROACH -->
+  <section aria-labelledby="how">
+    <div class="sec-head">
+      <span class="eyebrow">How I work</span>
+      <h2 id="how">How I bring agentic AI into a business</h2>
+      <p>The same three steps behind my work at Projekt Rising, SalesAPE.ai and Ventureship.</p>
+    </div>
+    <ol class="steps">
+      <li>
+        <span class="step-n">1</span>
+        <h3>Find the work worth automating</h3>
+        <p>I sit with the team, map how work actually flows, and pick out the manual, repetitive steps where AI saves the most hours.</p>
+      </li>
+      <li>
+        <span class="step-n">2</span>
+        <h3>Build agents that plug into what you already use</h3>
+        <p>Multistage agents connected to your CRM, data and tools through production APIs. Each stage checks its own output, and the key decisions follow deterministic logic.</p>
+      </li>
+      <li>
+        <span class="step-n">3</span>
+        <h3>Prove it works in production</h3>
+        <p>I track accuracy, latency and real user outcomes, run bias audits where decisions affect people, and fix what test runs surface before anyone relies on it.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section aria-labelledby="exp">
+    <div class="sec-head">
+      <span class="eyebrow">Experience</span>
+      <h2 id="exp">Nine roles across startups, charities, government and finance</h2>
+      <p>Most recent first. Over the last year almost every role has been about putting AI to work inside a business.</p>
+    </div>
+
+    <div class="timeline">
+      <article class="job">
+        <div class="when">Aug 2026 to Oct 2026</div>
+        <div class="job-body">
+          <h3>Founding Engineer Intern <span class="org">Ventureship</span></h3>
+          <ul>
+            <li>Built the end to end agentic pipeline for an AI hiring platform on the Anthropic SDK. One automated run replaced a fully manual process the founder used to do by hand.</li>
+            <li>Designed multistage agents with self checking schemas, deterministic decision logic and bias audits at every key decision point. Found and fixed bugs across 3 rounds of production test runs.</li>
+            <li>Shaped core platform decisions, including the shared data schema and the write interface to the application layer, reviewed weekly with the technical advisor.</li>
+          </ul>
+          <div class="chips"><span class="chip">AI agents</span><span class="chip">Anthropic SDK</span><span class="chip">Bias auditing</span><span class="chip">Schema design</span></div>
+        </div>
+      </article>
+
+      <article class="job">
+        <div class="when">Jul 2026 to Oct 2026</div>
+        <div class="job-body">
+          <h3>Software Engineer, volunteer <span class="org">Samaritan's Purse</span></h3>
+          <ul>
+            <li>Sole engineer on a digital ordering and stock system for a £10,000 charity procurement project that supplies discounted shoebox gifts to 50 community groups.</li>
+            <li>Built the whole thing myself. An online order form, an automated payment and confirmation flow, and a live stock dashboard with low stock alerts.</li>
+            <li>Replaced a manual spreadsheet process with an automated pipeline that cuts admin time and order errors.</li>
+          </ul>
+          <div class="chips"><span class="chip">Full stack</span><span class="chip">Payments</span><span class="chip">Dashboards</span></div>
+          <div class="case-links"><a class="btn" href="https://packing-party-2026.netlify.app/" target="_blank" rel="noopener">See the live site</a></div>
+        </div>
+      </article>
+
+      <article class="job">
+        <div class="when">Dec 2025 to Mar 2026</div>
+        <div class="job-body">
+          <h3>AI Engineer, contractor <span class="org">Projekt Rising</span></h3>
+          <ul>
+            <li>Mapped client workflows across several SMEs, found the automation gaps, then designed and shipped AI integrations that cut roughly 600 hours of manual work per month.</li>
+            <li>Built and monitored production APIs that connect AI models to client data, tracking accuracy, latency and user outcomes per deployment.</li>
+            <li>Built the Toolkit Integration Engine. It reads a CRM's OpenAPI spec, ranks every endpoint, and generates a working client at runtime. Live on HubSpot and Pipedrive, backed by 146 passing tests.</li>
+          </ul>
+          <div class="chips"><span class="chip">Python</span><span class="chip">REST APIs</span><span class="chip">OpenAPI</span><span class="chip">Monitoring</span></div>
+        </div>
+      </article>
+
+      <article class="job">
+        <div class="when">Dec 2025 to Mar 2026</div>
+        <div class="job-body">
+          <h3>Software Engineer Intern <span class="org">SalesAPE.ai</span></h3>
+          <ul>
+            <li>Designed and built 3 AI MVP prototypes in a fast moving hacksquad. 2 of the 3 were greenlit by leadership for further development.</li>
+            <li>Built evaluation pipelines to measure model reliability and document experiments, pushing prototypes toward production quality.</li>
+            <li>Worked on the core MVP that turns an Instagram profile or website URL into a live site with lead capture, bookings and follow up automation.</li>
+          </ul>
+          <div class="chips"><span class="chip">TypeScript</span><span class="chip">Node</span><span class="chip">React 19</span><span class="chip">Prisma</span><span class="chip">Evals</span></div>
+        </div>
+      </article>
+
+      <article class="job now">
+        <div class="when">Aug 2025 to now<br><span class="tag-now">current</span></div>
+        <div class="job-body">
+          <h3>Head of Engineering <span class="org">Responsible AI Governance Initiative</span></h3>
+          <ul>
+            <li>Lead engineering for a nonprofit focused on responsible AI governance and manage a cross functional team.</li>
+          </ul>
+          <div class="chips"><span class="chip">Leadership</span><span class="chip">AI governance</span><span class="chip">Product</span></div>
+        </div>
+      </article>
+
+      <article class="job">
+        <div class="when">Jul 2024 to Jul 2025</div>
+        <div class="job-body">
+          <h3>Data Science Year in Industry <span class="org">National Highways</span></h3>
+          <ul>
+            <li>Built a CNN weather classification and removal model with 98% accuracy on 10,000 CCTV images, making road monitoring more reliable in rain, fog and snow.</li>
+            <li>Led and solely built a RAG knowledge graph over thousands of interconnected engineering documents. It extracts document codes, works out which documents reference or supersede each other, and lets engineers query the network.</li>
+            <li>Built a segmentation model on satellite imagery that identifies and classifies roadside habitats for infrastructure planning.</li>
+          </ul>
+          <p class="award-note">Won Year in Industry Student of the Year, one of only 10 award winners from 400 early talent people at National Highways</p>
+          <div class="chips"><span class="chip">Computer vision</span><span class="chip">RAG</span><span class="chip">Knowledge graphs</span><span class="chip">Geospatial</span></div>
+        </div>
+      </article>
+
+      <article class="job">
+        <div class="when">May 2023 to Aug 2023</div>
+        <div class="job-body">
+          <h3>Founder <span class="org">FaceRegg</span></h3>
+          <ul>
+            <li>Founded and built an image verification SaaS using CNNs for face and image matching. Signed 2 paying clients and earned £5k in revenue.</li>
+            <li>Designed the training and inference pipelines in TensorFlow and OpenCV, tuned for accuracy and response time on real world inputs.</li>
+          </ul>
+          <div class="chips"><span class="chip">Startup</span><span class="chip">TensorFlow</span><span class="chip">OpenCV</span></div>
+        </div>
+      </article>
+
+      <article class="job">
+        <div class="when">Jun 2023 to Jul 2023</div>
+        <div class="job-body">
+          <h3>Research Intern <span class="org">Imperial College London</span></h3>
+          <ul>
+            <li>Prototyped data driven climate resilience technology in a cross functional team, working with researchers and industry mentors to test impact and feasibility.</li>
+          </ul>
+          <div class="chips"><span class="chip">Research</span><span class="chip">Climate tech</span></div>
+        </div>
+      </article>
+
+      <article class="job">
+        <div class="when">Sep 2021 to Dec 2021</div>
+        <div class="job-body">
+          <h3>Software Engineering Intern <span class="org">Paradigm Finance</span></h3>
+          <ul>
+            <li>Built internal credit risk tools, generated client portfolio reports and maintained web apps under financial data security standards.</li>
+          </ul>
+          <p class="award-note">Named Intern of the Year</p>
+          <div class="chips"><span class="chip">Credit risk</span><span class="chip">Web apps</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CASE STUDIES -->
+  <section aria-labelledby="work">
+    <div class="sec-head">
+      <span class="eyebrow">Selected work</span>
+      <h2 id="work">Six builds in depth</h2>
+      <p>Every number below comes from the project's own benchmarks, reports or live site.</p>
+    </div>
+
+    <div class="cases">
+      <!-- CUDA -->
+      <article class="case">
+        <div class="case-text">
+          <div class="case-label"><span class="eyebrow">Independent build</span><span class="eyebrow">CUDA · NumPy · JAX</span></div>
+          <h3>A transformer built from raw CUDA kernels</h3>
+          <p>No PyTorch, TensorFlow or JAX in the core math. I wrote the kernels by hand (tiled matmul, warp shuffle softmax, tree reduction), built an autograd engine on top, then a full decoder transformer on top of that.</p>
+          <p>Then I trained the exact same model class on two unrelated problems. Once on TinyStories to generate text, once on MovieLens 1M to recommend the next film. The only change was what the tokens meant.</p>
+          <p class="why">The recommender is deployed and live. 1.7M parameters, 4 decoder layers, 4 attention heads, 3,706 movie tokens.</p>
+          <div class="case-links">
+            <a class="btn primary" href="https://cudatransformer-recommender.onrender.com/" target="_blank" rel="noopener">Try the live recommender</a>
+            <a class="btn" href="https://github.com/Nwachukwu1300/cudatransformer" target="_blank" rel="noopener">Code and benchmarks</a>
+          </div>
+        </div>
+        <div class="case-data">
+          <div class="stat-row">
+            <div><span class="v">25.7×</span><span class="l">faster tiled attention at sequence length 1,024</span></div>
+            <div><span class="v">128 MB</span><span class="l">memory never allocated</span></div>
+            <div><span class="v">98.00%</span><span class="l">MNIST accuracy, own Adam optimiser</span></div>
+            <div><span class="v">3.40 → 1.69</span><span class="l">language model loss over 15 epochs</span></div>
+            <div><span class="v">2.6×</span><span class="l">TPU v5e over Tesla T4, same code</span></div>
+            <div><span class="v">~128×</span><span class="l">TPU over my own CPU engine</span></div>
+          </div>
+          <div class="stages" aria-label="Build stages">
+            <div class="stage"><span class="n">1</span><span><b>CUDA kernels</b> <span class="d">benchmarked CPU against GPU</span></span></div>
+            <div class="stage"><span class="n">2</span><span><b>Autograd engine</b> <span class="d">a Tensor class with a real backward pass</span></span></div>
+            <div class="stage"><span class="n">3</span><span><b>Transformer</b> <span class="d">multihead causal attention, residual blocks</span></span></div>
+            <div class="stage"><span class="n">4, 5</span><span><b>Language model and recommender</b> <span class="d">one architecture, zero changes</span></span></div>
+            <div class="stage"><span class="n">6</span><span><b>Tiled attention</b> <span class="d">FlashAttention style kernel, checked element for element</span></span></div>
+            <div class="stage"><span class="n">7</span><span><b>GPU against TPU</b> <span class="d">raced on Colab hardware</span></span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- SENTINEL -->
+      <article class="case">
+        <div class="case-text">
+          <div class="case-label"><span class="eyebrow">BSc dissertation</span><span class="eyebrow">PyTorch · Flask</span></div>
+          <h3>Sentinel, forensic vehicle identification</h3>
+          <p>From one photo, Sentinel names a car's make, model and year, then pulls its Euro NCAP crash safety rating. It is the first stage of an accident reconstruction pipeline, so every prediction carries a calibrated confidence and flags itself for human review when it should.</p>
+          <p>Two ResNet50 branches read the whole car and a front crop (grille, headlights, badge). Ordinal regression handles the year, Kendall uncertainty weighting balances the three tasks, and temperature scaling makes the confidence scores honest. TorchScript cut inference from 480ms to 46ms.</p>
+          <p class="why">Built in 10 staged experiments with ablations and failure mode analysis. Trained on Stanford Cars, 49 makes, 189 models, 16 model years, about 51M parameters.</p>
+          <div class="case-links">
+            <a class="btn primary" href="https://drive.google.com/file/d/1m0iP5nCtqZHm_CMRhVzV6RlxQO3pS-i1/view?usp=sharing" target="_blank" rel="noopener">Watch the demo</a>
+            <a class="btn" href="https://huggingface.co/mmesomaa/sentiel1" target="_blank" rel="noopener">Model on Hugging Face</a>
+            <a class="btn" href="https://github.com/Nwachukwu1300/sentiel1" target="_blank" rel="noopener">Code</a>
+          </div>
+        </div>
+        <div class="case-data">
+          <div class="bars" aria-label="Test accuracy by task">
+            <div class="bar"><span>Make</span><span class="track"><span class="fill" style="width:96.4%;display:block"></span></span><span class="pct">96.4%</span></div>
+            <div class="bar"><span>Model</span><span class="track"><span class="fill" style="width:91.0%;display:block"></span></span><span class="pct">91.0%</span></div>
+            <div class="bar"><span>Year</span><span class="track"><span class="fill" style="width:89.1%;display:block"></span></span><span class="pct">89.1%</span></div>
+            <div class="bar key"><span>All three</span><span class="track"><span class="fill" style="width:81.7%;display:block"></span></span><span class="pct">81.7%</span></div>
+            <div class="bar"><span>Year ±2</span><span class="track"><span class="fill" style="width:95.1%;display:block"></span></span><span class="pct">95.1%</span></div>
+            <div class="axis"><span></span><span><span>0</span><span>50</span><span>100</span></span><span></span></div>
+          </div>
+<pre class="code"><span class="c">// real output from POST /identify</span>
+{
+  <span class="k">"model_inference_ms"</span>: 46.4,
+  <span class="k">"prediction"</span>: {
+    <span class="k">"make"</span>: <span class="s">"Mercedes-Benz"</span>,
+    <span class="k">"model"</span>: <span class="s">"E-Class Sedan"</span>,
+    <span class="k">"year"</span>: 2012,
+    <span class="k">"hierarchical_confidence"</span>: 0.9531,
+    <span class="k">"overall_status"</span>: <span class="s">"ADMISSIBLE"</span>
+  },
+  <span class="k">"database_match"</span>: {
+    <span class="k">"match_type"</span>: <span class="s">"exact"</span>,
+    <span class="k">"overall_stars"</span>: 5,
+    <span class="k">"adult_occupant_pct"</span>: 86.0
+  }
+}</pre>
+        </div>
+      </article>
+
+      <!-- PACKING PARTY -->
+      <article class="case">
+        <div class="case-text">
+          <div class="case-label"><span class="eyebrow">Samaritan's Purse</span><span class="eyebrow">Live in production</span></div>
+          <h3>Packing Party Gift Offer</h3>
+          <p>Every year, groups across the UK fill Operation Christmas Child shoeboxes with gifts for children. Samaritan's Purse sells those gifts in bulk at a discount so each group's fundraising goes further. The whole thing ran on spreadsheets. I designed and built the replacement on my own.</p>
+          <p>Groups pick packs of 50 from hairbrushes, stationery, toy cars, dolls and more, watch a running total so they stay inside their budget, add the date of their packing party, and pay by card. A confirmation email goes out automatically. Behind the scenes the team watches stock on a live dashboard that flags items running low before they sell out.</p>
+          <p class="why">It is live right now for the 2026 season, ahead of National Collection Week in November. A group can place a full order in about five minutes.</p>
+          <div class="case-links">
+            <a class="btn primary" href="https://packing-party-2026.netlify.app/" target="_blank" rel="noopener">Visit the live site</a>
+          </div>
+        </div>
+        <div class="case-data">
+          <div class="stat-row">
+            <div><span class="v">£10,000</span><span class="l">procurement project</span></div>
+            <div><span class="v">50</span><span class="l">community groups supplied</span></div>
+            <div><span class="v">Solo</span><span class="l">design, build and launch</span></div>
+          </div>
+          <div class="stages" aria-label="Order flow">
+            <div class="stage"><span class="n">1</span><span><b>Choose packs</b> <span class="d">gifts sold in packs of 50, one pack per 50 shoeboxes</span></span></div>
+            <div class="stage"><span class="n">2</span><span><b>Running total</b> <span class="d">updates live so groups order within budget</span></span></div>
+            <div class="stage"><span class="n">3</span><span><b>Party details</b> <span class="d">contact and packing party date for delivery timing</span></span></div>
+            <div class="stage"><span class="n">4</span><span><b>Card payment</b> <span class="d">automated payment flow</span></span></div>
+            <div class="stage"><span class="n">5</span><span><b>Confirmation email</b> <span class="d">sent automatically with the order</span></span></div>
+            <div class="stage"><span class="n">6</span><span><b>Stock dashboard</b> <span class="d">live levels with low stock alerts for the team</span></span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- EXCELPOINT -->
+      <article class="case">
+        <div class="case-text">
+          <div class="case-label"><span class="eyebrow">Startup build</span><span class="eyebrow">Django · React · LangChain</span></div>
+          <h3>ExcelPoint, a study partner built on RAG</h3>
+          <p>Students upload their own material, PDFs, Word documents, lecture videos or audio, and ExcelPoint turns it into something they can talk to. Ask a question and the answer comes from your notes, not the open internet. The chat remembers the whole conversation and picks up where you left off next time.</p>
+          <p>From the same material it generates quizzes, flashcards with spaced repetition, and adaptive learning paths that change as you progress. Progress tracking and achievements show what is sticking and what needs another look.</p>
+          <p class="why">Heavy lifting runs in the background. Celery workers on Redis chunk and embed documents without blocking the app and retry failed jobs automatically. Responses are cached to cut model costs, storage switches between local disk and S3, and the API is protected with Google OAuth, JWT, role based access and rate limiting.</p>
+          <div class="case-links">
+            <a class="btn primary" href="https://drive.google.com/file/d/1yBZ8Cexa4Lhrnot7D3OiEqdqtsfgFxn5/view" target="_blank" rel="noopener">Watch the demo</a>
+            <a class="btn" href="https://github.com/Nwachukwu1300/excelpoint" target="_blank" rel="noopener">Code</a>
+          </div>
+        </div>
+        <div class="case-data">
+          <div class="stages" aria-label="RAG pipeline">
+            <div class="stage"><span class="n">in</span><span><b>Upload</b> <span class="d">PDF, DOCX, video and audio, validated and sanitised</span></span></div>
+            <div class="stage"><span class="n">split</span><span><b>Smart chunking</b> <span class="d">documents segmented for retrieval</span></span></div>
+            <div class="stage"><span class="n">emb</span><span><b>Vector embeddings</b> <span class="d">sentence transformers for semantic search</span></span></div>
+            <div class="stage"><span class="n">ask</span><span><b>Context aware chat</b> <span class="d">answers grounded in your material, with memory</span></span></div>
+            <div class="stage"><span class="n">learn</span><span><b>Study tools</b> <span class="d">quizzes, flashcards, adaptive paths, analytics</span></span></div>
+          </div>
+          <div class="stat-row">
+            <div><span class="v">4</span><span class="l">input formats, text to video</span></div>
+            <div><span class="v">66</span><span class="l">commits of iteration</span></div>
+            <div><span class="v">Async</span><span class="l">Celery and Redis workers with retries</span></div>
+          </div>
+          <div class="chips"><span class="chip">Python 3.13</span><span class="chip">Django 5.2</span><span class="chip">React 18</span><span class="chip">TypeScript</span><span class="chip">PostgreSQL</span><span class="chip">LangChain</span><span class="chip">WebSockets</span><span class="chip">AWS S3</span><span class="chip">Docker</span><span class="chip">Vitest</span></div>
+        </div>
+      </article>
+
+      <!-- PAYMENTS -->
+      <article class="case">
+        <div class="case-text">
+          <div class="case-label"><span class="eyebrow">Independent build</span><span class="eyebrow">Python · PostgreSQL</span></div>
+          <h3>Payment authorisation simulator</h3>
+          <p>A CLI first model of the real card payment path, merchant to acquirer to card network to issuer, with ISO 8583 response codes, soft and hard declines, acquirer routing, 3DS as a measurable decision, and chargebacks that arrive 2 to 12 weeks late, the way real fraud labels do.</p>
+          <p>Global retry rules treat every bank the same. I learned behaviour profiles per issuer from historical outcomes and replaced the global rules with issuer aware retry and routing strategies. Every attempt is logged so each decision can be replayed and explained.</p>
+          <div class="case-links">
+            <a class="btn" href="https://github.com/Nwachukwu1300/payment_system" target="_blank" rel="noopener">Code and reports</a>
+          </div>
+        </div>
+        <div class="case-data">
+          <div class="ab-wrap">
+            <table class="ab">
+              <thead><tr><th>Metric</th><th>Global rules</th><th>Issuer aware</th><th>Change</th></tr></thead>
+              <tbody>
+                <tr><td>Authorisation rate</td><td>82.5%</td><td>84.3%</td><td class="gain">+1.8 pts</td></tr>
+                <tr><td>Retry rate</td><td>15.2%</td><td>12.1%</td><td class="gain">−3.1 pts</td></tr>
+                <tr><td>Wasted retries</td><td>8.1%</td><td>4.2%</td><td class="gain">halved</td></tr>
+                <tr><td>Average latency</td><td>245ms</td><td>238ms</td><td class="gain">−7ms</td></tr>
+                <tr><td>Net approvals</td><td>0</td><td>+156</td><td class="gain">+156</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="stat-row">
+            <div><span class="v">£23,400</span><span class="l">extra revenue</span></div>
+            <div><span class="v">£3,100</span><span class="l">retry cost saved</span></div>
+            <div><span class="v">£26,500</span><span class="l">net benefit in the simulated run</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- KNOWLEDGE GRAPH -->
+      <article class="case">
+        <div class="case-text">
+          <div class="case-label"><span class="eyebrow">National Highways</span><span class="eyebrow">spaCy · NetworkX · LLMs</span></div>
+          <h3>A knowledge graph over engineering manuals</h3>
+          <p>National Highways runs on thousands of technical documents that cite, replace and depend on each other. Nobody could see that web. I was the sole developer and researcher on an internal tool that reads the PDFs, recognises document codes with a custom spaCy pipeline, classifies how documents relate, and stores the result as a graph engineers can query through an LLM assistant.</p>
+          <p class="why">It answers questions like which documents depend on this standard, which ones replaced it, and which ones sit isolated with almost no links. The full source stays internal.</p>
+          <div class="case-links">
+            <a class="btn" href="https://github.com/Nwachukwu1300/pdf_llm" target="_blank" rel="noopener">Public overview</a>
+          </div>
+        </div>
+        <div class="case-data">
+          <div class="stages" aria-label="Pipeline">
+            <div class="stage"><span class="n">in</span><span><b>PDF extraction</b> <span class="d">pdfplumber, cleaning, chunking long manuals</span></span></div>
+            <div class="stage"><span class="n">ner</span><span><b>Entity recognition</b> <span class="d">custom patterns for document codes</span></span></div>
+            <div class="stage"><span class="n">rel</span><span><b>Relationship typing</b> <span class="d">references, supersedes, relates to</span></span></div>
+            <div class="stage"><span class="n">kg</span><span><b>Graph build</b> <span class="d">RDF triples, centrality and clustering metrics</span></span></div>
+            <div class="stage"><span class="n">out</span><span><b>RAG assistant</b> <span class="d">semantic search and network visualisation</span></span></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- MORE WORK -->
+  <section aria-labelledby="more">
+    <div class="sec-head">
+      <span class="eyebrow">More builds</span>
+      <h2 id="more">Products, models and university projects</h2>
+    </div>
+    <div class="grid3">
+      <article class="card">
+        <span class="ctx">Startup · £5k revenue</span>
+        <h3>FaceRegg</h3>
+        <p>Face and image verification as a service, built on CNNs with TensorFlow and OpenCV. Two paying clients used it for automated identity checks.</p>
+        <div class="more"><a href="https://nwachukwu1300.github.io/Faceregg/" target="_blank" rel="noopener">Website</a><a href="https://github.com/Nwachukwu1300/Faceregg" target="_blank" rel="noopener">Code</a></div>
+      </article>
+      <article class="card">
+        <span class="ctx">Projekt Rising · 146 tests</span>
+        <h3>Toolkit Integration Engine</h3>
+        <p>Point it at a CRM and it discovers the API (86 capabilities on Pipedrive), scores each endpoint, resolves ambiguities, and builds a unified client at runtime. Adding a new CRM takes one adapter file.</p>
+        <div class="more"><a href="https://github.com/Nwachukwu1300/projektrising" target="_blank" rel="noopener">Code</a></div>
+      </article>
+      <article class="card">
+        <span class="ctx">National Highways · vision</span>
+        <h3>Deweathering model</h3>
+        <p>Classifies clear, rain, fog and snow on road CCTV, then removes the weather to improve visibility. Compared ResNet50 against a Vision Transformer with targeted augmentation for rare classes.</p>
+        <div class="more"><a href="https://github.com/Nwachukwu1300/weather-classification" target="_blank" rel="noopener">Code</a></div>
+      </article>
+      <article class="card">
+        <span class="ctx">National Highways · geospatial</span>
+        <h3>Habitat segmentation</h3>
+        <p>A segmentation model that maps habitats and environmental features from satellite data along the UK road network.</p>
+        <div class="more"><a href="https://github.com/Nwachukwu1300/geospatial_habitat_segmentation" target="_blank" rel="noopener">Code</a></div>
+      </article>
+      <article class="card">
+        <span class="ctx">SalesAPE.ai · MVP</span>
+        <h3>SalesAPE platform</h3>
+        <p>Turns a small business's Instagram or website into a live online presence in minutes, with lead capture, booking, content workflows and follow ups. Node, Express, Prisma, React 19, queue workers, CI on every push.</p>
+        <div class="more"><a href="https://github.com/Nwachukwu1300/salesape_mvp" target="_blank" rel="noopener">Code</a></div>
+      </article>
+      <article class="card">
+        <span class="ctx">University · 90% grade</span>
+        <h3>Academi mobile app</h3>
+        <p>A .NET MAUI app for students to manage and collaborate on academic tasks and projects.</p>
+        <div class="more"><a href="https://youtu.be/o5TfR-ZqolU" target="_blank" rel="noopener">Demo</a><a href="https://github.com/Nwachukwu1300/mymauiapp" target="_blank" rel="noopener">Code</a></div>
+      </article>
+      <article class="card">
+        <span class="ctx">University · 85% grade</span>
+        <h3>Bicycle demand forecasting</h3>
+        <p>Regression models with engineered features that predict hourly bike usage.</p>
+        <div class="more"><a href="https://youtu.be/meQ7LEHX4fE" target="_blank" rel="noopener">Demo</a><a href="https://github.com/Nwachukwu1300/BICYCLEMODEL" target="_blank" rel="noopener">Code</a></div>
+      </article>
+      <article class="card">
+        <span class="ctx">Hackathon · Web3</span>
+        <h3>PolyGrand</h3>
+        <p>A decentralised prediction market that supports betting and arbitrage on blockchain infrastructure.</p>
+        <div class="more"><a href="https://github.com/Nwachukwu1300/PolyGrand_hackathon" target="_blank" rel="noopener">Code</a></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- COMPETITIONS -->
+  <section aria-labelledby="comps">
+    <div class="sec-head">
+      <span class="eyebrow">Competitions</span>
+      <h2 id="comps">Placing against hundreds of teams</h2>
+    </div>
+    <div class="comp">
+      <article class="comp-item">
+        <div class="placing">Top 5<small>of about 50 teams, global</small></div>
+        <h3>Street Fighter III RL agent</h3>
+        <p>DIAMBRA competition at the Cambridge AI Hackathon. A PPO agent trained with a 3 phase curriculum from easy to hard opponents over about 10 million steps, with frame stacking and custom reward shaping.</p>
+        <div class="more"><a href="https://github.com/Nwachukwu1300/street_fighter_rl_agent" target="_blank" rel="noopener">Code</a> · <a href="https://huggingface.co/mmesomaa/streetfighter_agent" target="_blank" rel="noopener">Model</a></div>
+      </article>
+      <article class="comp-item">
+        <div class="placing">Top 10<small>of 200 teams across Europe</small></div>
+        <h3>PersonaSync</h3>
+        <p>A voice agent that turns dull surveys into a conversation. It builds a personality avatar from your answers and speaks back in a matching ElevenLabs voice, with XP and rewards. Next.js, OpenAI, Firebase.</p>
+        <div class="more"><a href="https://www.youtube.com/watch?v=dJ5p53Ijlkg" target="_blank" rel="noopener">Demo</a> · <a href="https://github.com/Nwachukwu1300/personasync" target="_blank" rel="noopener">Code</a></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- AWARDS -->
+  <section aria-labelledby="awards">
+    <div class="sec-head">
+      <span class="eyebrow">Scholarships and awards</span>
+      <h2 id="awards">Five times picked out of the crowd</h2>
+    </div>
+    <div class="awards">
+      <article class="award">
+        <div class="odds">1 of 10<small>winners from 400 early talent</small></div>
+        <div class="dots" aria-hidden="true" data-on="1" data-n="40"></div>
+        <h3>Year in Industry Student of the Year</h3><span class="by">National Highways, 2025</span>
+      </article>
+      <article class="award">
+        <div class="odds">Top 2%<small>of 50,000+ applicants</small></div>
+        <div class="dots" aria-hidden="true" data-on="1" data-n="50"></div>
+        <h3>AWS Machine Learning Scholarship</h3><span class="by">Amazon Web Services, 2023</span>
+      </article>
+      <article class="award">
+        <div class="odds">1 of 100<small>recipients nationwide</small></div>
+        <h3>Santander Universities Scholarship</h3><span class="by">Santander, 2023</span>
+      </article>
+      <article class="award">
+        <div class="odds">#1<small>intern of the year</small></div>
+        <h3>Intern of the Year</h3><span class="by">Paradigm Finance, 2021</span>
+      </article>
+      <article class="award">
+        <div class="odds">#1<small>of 50 in the cohort</small></div>
+        <h3>Best Foundation Student</h3><span class="by">16 Plus Schools, 2021</span>
+      </article>
+    </div>
+  </section>
+
+  <!-- EDUCATION + SKILLS -->
+  <section class="two" aria-label="Education and skills">
+    <div>
+      <div class="sec-head"><span class="eyebrow">Education</span><h2>Where I trained</h2></div>
+      <div class="edu">
+        <div class="edu-item">
+          <h3>BSc Computer Science</h3>
+          <span class="ctx">Coventry University · 2022 to 2026</span>
+          <span class="grade">First Class Honours</span>
+          <p>Modules in AI, Data Science, Advanced Algorithms, Software Engineering and Theory of Computation. Dissertation on forensic vehicle identification (Sentinel).</p>
+        </div>
+        <div class="edu-item">
+          <h3>Canadian Plus Foundation</h3>
+          <span class="ctx">16 Plus Schools · 2020 to 2021</span>
+          <span class="grade">91% overall · top of cohort</span>
+          <p>A level equivalent in mathematics, physics and computer science.</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="sec-head"><span class="eyebrow">Toolkit</span><h2>What I build with</h2></div>
+      <div class="skills">
+        <div class="skill-group"><span class="g">ML and AI</span><span class="list">PyTorch, TensorFlow, Keras, JAX and Flax, CUDA, Hugging Face, LangChain, Anthropic SDK, OpenAI API, scikit learn, OpenCV, spaCy, Stable Baselines3, RAG, knowledge graphs, reinforcement learning</span></div>
+        <div class="skill-group"><span class="g">Backend</span><span class="list">Python, Django, Flask, FastAPI, Node.js, Express, PostgreSQL, MongoDB, Redis, Celery, Prisma, REST APIs, SQL</span></div>
+        <div class="skill-group"><span class="g">Frontend</span><span class="list">React, Next.js, TypeScript, JavaScript, Tailwind CSS, HTML and CSS</span></div>
+        <div class="skill-group"><span class="g">Cloud and data</span><span class="list">AWS S3, Azure, Databricks, Apache Spark, Docker, Firebase, GitHub Actions, Google Colab TPUs and GPUs</span></div>
+        <div class="skill-group"><span class="g">Languages</span><span class="list">Python, C++, JavaScript, TypeScript, R, SQL</span></div>
+        <div class="skill-group"><span class="g">Off the clock</span><span class="list">Gym, football, basketball, films, and trying every new tool that ships</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" aria-labelledby="hire">
+    <div>
+      <h2 id="hire">Got work AI should be doing? Let's talk.</h2>
+      <p>Open to AI engineering roles focused on agentic systems and bringing AI into businesses. Based in Coventry and happy to work across the UK.</p>
+    </div>
+    <div class="contact-actions">
+      <div class="email"><span id="mail">mnfinance664@gmail.com</span><button type="button" id="copy">Copy</button></div>
+      <div class="links">
+        <a class="btn" href="https://www.linkedin.com/in/mmesoma-nwachukwu-3a3862263/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/Nwachukwu1300" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://mmesomadev.com/Mmesoma_CV_pdf.pdf" target="_blank" rel="noopener">CV</a>
+      </div>
+    </div>
+  </section>
+  <footer class="foot"><span>Mmesoma Nwachukwu · say it “so ma”</span><span>Updated October 2026</span></footer>
+</div>
+
+<script>
+  document.querySelectorAll('.dots').forEach(function (el) {
+    var n = +el.dataset.n || 40, on = +el.dataset.on || 1, html = '';
+    for (var i = 0; i < n; i++) html += '<i' + (i < on ? ' class="on"' : '') + '></i>';
+    el.innerHTML = html;
+  });
+  var btn = document.getElementById('copy');
+  btn.addEventListener('click', function () {
+    var text = document.getElementById('mail').textContent;
+    function selectIt() {
+      var r = document.createRange(); r.selectNodeContents(document.getElementById('mail'));
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      btn.textContent = 'Selected';
+    }
+    try {
+      navigator.clipboard.writeText(text).then(function () { btn.textContent = 'Copied'; }, selectIt);
+    } catch (e) { selectIt(); }
+    setTimeout(function () { btn.textContent = 'Copy'; }, 1800);
+  });
+</script>
+</body>
+</html>
